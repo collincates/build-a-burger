@@ -1,0 +1,83 @@
+body {
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 800px;
+  padding: 1rem;
+  margin: auto;
+  border: 1px solid blue;
+}
+
+.game-title {
+  align-items: center;
+}
+#main-burger-image {
+  height: 100px;
+  width: 100px;
+  margin: 0.5rem;
+}
+
+#order-tickets-container {
+  display: flex;
+  height: 200px;
+  width: 400px;
+  background-color: lightblue;
+  border: 3px solid black;
+  /* position: relative; */
+
+}
+
+.content-wrapper {
+  display: flex;
+  min-width: 200px;
+  border: 1px solid black;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+#order-tickets {
+  display: flex;
+  margin-left: 37%;
+  border: 1px solid black;
+  width: 600px;
+}
+
+#order-ticket-active {
+  border: 1px solid black;
+  width: 200px;
+}
+
+#order-ticket-active > h3 {
+  text-align: center;
+}
+
+.order-ticket {
+  position: relative;
+  border: 1px solid black;
+  width: 200px;
+
+}
+
+.order-ticket > h3 {
+  text-align: center;
+}
+
+.recipe-items {
+  list-style-type: none;
+  font-weight: bold;
+}
+
+#ingredients-container {
+  display: flex;
+  padding: 1rem;
+  margin: auto;
+  max-width: 700px;
+}
+
+.ingredient-image-container {
+  box-shadow: 0px 0px 8px #aaaaaa;
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+}
