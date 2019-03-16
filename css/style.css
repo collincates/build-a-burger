@@ -11,27 +11,32 @@ body {
 
 .game-title {
   align-items: center;
+  display: flex;
+  height: 100px;
+}
+
+.game-title > div {
+  width: 50%;
+  align-items: center;
+
 }
 #main-burger-image {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: auto;
   margin: 0.5rem;
 }
 
 #order-tickets-container {
   display: flex;
-  height: 200px;
+  height: 350px;
   width: 400px;
-  background-color: lightblue;
-  border: 3px solid black;
-  /* position: relative; */
-
 }
 
 .content-wrapper {
   display: flex;
   min-width: 200px;
-  border: 1px solid black;
+  height: 250px;
+  /* border: 1px solid black; */
   overflow: hidden;
   justify-content: flex-start;
 }
@@ -39,33 +44,39 @@ body {
 #order-tickets {
   display: flex;
   margin-left: 37%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 600px;
-}
-
-#order-ticket-active {
-  border: 1px solid black;
-  width: 200px;
-}
-
-#order-ticket-active > h3 {
-  text-align: center;
 }
 
 .order-ticket {
   position: relative;
-  border: 1px solid black;
-  width: 200px;
-
+  box-shadow: 0px 0px 8px #aaaaaa;
+  border-radius: 5px;
+  height: 250px;
+  width: 140px;
+  margin: 5px;
+  justify-content: flex-end;
+  background-image: url('https://farm3.staticflickr.com/2189/1809766325_f7e23e7b8f_b.jpg');
+  background-size: 100% 100%;
+  filter: opacity(50%);
 }
 
 .order-ticket > h3 {
   text-align: center;
+  position: relative;
+  top: 30%;
 }
 
-.recipe-items {
+.order-ticket > .recipe-items {
   list-style-type: none;
+  columns: 2;
   font-weight: bold;
+  position: absolute;
+  top: 50%;
+}
+
+.order-ticket#active-ticket {
+  filter: opacity(100%);
 }
 
 #ingredients-container {
