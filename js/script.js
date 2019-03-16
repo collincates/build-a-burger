@@ -149,13 +149,8 @@ const condiments = [
 ]
 const orderTicketsDiv = document.getElementById('order-tickets');
 
-function startGame() {
-  randomizeIngredientImages();
-
-}
-
 const startButton = document.getElementById('start-button');
-startButton.addEventListener('click', randomizeIngredientImages);
+startButton.addEventListener('click', startGame);
 
 
 function shuffle(array) {
@@ -236,23 +231,44 @@ function crossOffItem(event) {
     for (i = 0; i < orderIngredientsList.length; i++) {
         if (orderIngredientsList[i].textContent === clickedIngredient.name) {
             orderIngredientsList[i].style.textDecoration = 'line-through wavy black';
-            orderIngredientsList[i].style.backgroundColor = 'gray';
+            // orderIngredientsList[i].style.backgroundColor = 'gray';
         }
     }
 }
 
-while (orderTicketsDiv.children.length > 0) {
-    orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
+
+
+function startGame() {
+    let newTicket = createRandomOrderTicket;
+    let activeOrderTicket;
+    randomizeIngredientImages();
+
+
+
+    do {
+      newTicket();
+      orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
+      activeOrderTicket = document.getElementById('active-ticket');
+    } while (activeOrderTicket.complete === false);
 }
-// make active order ticket
-// orderTicket.className = 'order-ticket active-ticket';
 
 // function to check when all items on recipe list are checked off,
 
-// remove recipe from order tickets
+// while (activeOrderTicket.complete === false) {
+function switchout() {
+  // generate new recipe at end of array
+    console.log(`length before create random ticket ${orderTicketsDiv.children.length}`);
+    createRandomOrderTicket();
+    console.log(`length after create random ticket ${orderTicketsDiv.children.length}`);
+  // shift recipe from order tickets
+    console.log(`length before remove children[0] ${orderTicketsDiv.children.length}`);
+    orderTicketsDiv.children[0].remove();
+    console.log(`length before after children[0] ${orderTicketsDiv.children.length}`);
+  // make next recipe in array the order-ticket active-ticket class
+    console.log(`length before set active ${orderTicketsDiv.children.length}`);
+    orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
+    console.log(`length after set active ${orderTicketsDiv.children.length}`);
+}
 
-// make next recipe in array the order-ticket active-ticket class
-
-// generate new recipe at end of array
 
 // slide all recipes over

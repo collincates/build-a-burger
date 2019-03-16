@@ -1,12 +1,16 @@
 body {
   justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1515164132472-9c1ff52ee81c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80');
+  background-size: 100%;
 }
 
 .wrapper {
   max-width: 800px;
   padding: 1rem;
   margin: auto;
-  border: 1px solid blue;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 5px white;
 }
 
 .game-title {
@@ -58,7 +62,7 @@ body {
   justify-content: flex-end;
   background-image: url('https://farm3.staticflickr.com/2189/1809766325_f7e23e7b8f_b.jpg');
   background-size: 100% 100%;
-  filter: opacity(50%);
+  filter: opacity(60%);
 }
 
 .order-ticket > h3 {
@@ -91,4 +95,5 @@ body {
   height: 100px;
   width: 100px;
   margin: 5px;
+  background-color: white;
 }
