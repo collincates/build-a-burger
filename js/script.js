@@ -236,7 +236,22 @@ function crossOffItem(event) {
     }
 }
 
+function startClock() {
+    let timeRemaining = 30;
+    let clockElement = document.getElementById('clock');
 
+    let timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+      if (timeRemaining == 0) {
+        clearTimeout(timerId);
+        return;
+      } else {
+        clockElement.innerHTML = `${timeRemaining}`;
+        timeRemaining--;
+      }
+    }
+}
 
 function startGame() {
     let newTicket = createRandomOrderTicket;
@@ -253,6 +268,7 @@ function startGame() {
 }
 
 // function to check when all items on recipe list are checked off,
+// while (activeOrderTicket.complete)
 
 // while (activeOrderTicket.complete === false) {
 function switchout() {
