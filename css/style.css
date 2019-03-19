@@ -133,13 +133,17 @@ body {
 }
 
 .order-ticket > .recipe-items {
+  width: 100%;
   list-style-type: none;
   columns: 2;
+  column-fill: auto;
+  float: right;
+  /* column-width: 50px; */
   padding: 0;
-  left: 17px;
+  left: 10px;
   font-weight: bold;
   position: absolute;
-  top: 54%;
+  top: 44%;
 }
 
 .order-ticket#active-ticket {

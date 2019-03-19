@@ -1,42 +1,77 @@
-const dishes = [
-    {
-    name: 'Burger',
-    imageLink: 'https://openclipart.org/download/9079/Gerald-G-Fast-Food-Lunch-Dinner-FF-Menu-6.svg',
-    },
-    {
-    name: 'BurgerExplained',
-    imageLink: 'https://openclipart.org/download/309325/1541081610.svg',
-    },
-]
 const orderTicketData = [
   {
     name: 'Cheeseburger',
     ingredients: [
-      'Bread',
+      'Bun',
       'Meat',
       'Lettuce',
       'Tomato',
       'Cheese',
+      'Onion',
+    ]
+  },
+  {
+    name: 'Cheeseburger',
+    ingredients: [
+      'Bun',
+      'Mushroom',
+      'Avocado',
+      'Cheese',
+      'Meat',
+      'Pickles',
+      'Lettuce'
+    ]
+  },
+  {
+    name: 'Cheeseburger',
+    ingredients: [
+      'Bun',
+      'Pineapple',
+      'Fried Egg',
+      'Meat',
+      'Lettuce',
+      'Cheese',
+      'Bacon'
+    ]
+  },
+  {
+    name: 'Hamburger',
+    ingredients: [
+      'Bun',
+      'Meat',
+      'Lettuce',
+      'Tomato',
       'Onion',
     ]
   },
   {
     name: 'Hamburger',
     ingredients: [
-      'Bread',
+      'Bun',
       'Meat',
+      'Pickles',
       'Lettuce',
       'Tomato',
       'Onion',
     ]
   },
   {
-    name: 'Double Cheeseburger',
+    name: 'Hamburger',
     ingredients: [
-      'Bread',
+      'Bun',
       'Meat',
-      'Meat',
-      'Cheese',
+      'Pineapple',
+      'Lettuce',
+      'Tomato',
+      'Onion',
+      'Pickles'
+    ]
+  },
+  {
+    name: 'Veggie Burger',
+    ingredients: [
+      'Bun',
+      'Veggie Patty',
       'Cheese',
       'Lettuce',
       'Tomato',
@@ -46,12 +81,39 @@ const orderTicketData = [
   {
     name: 'Veggie Burger',
     ingredients: [
-      'Bread',
+      'Bun',
       'Veggie Patty',
       'Cheese',
+      'Avocado',
       'Lettuce',
       'Tomato',
       'Onion',
+    ]
+  },
+  {
+    name: 'Veggie Burger',
+    ingredients: [
+      'Bun',
+      'Veggie Patty',
+      'Cheese',
+      'Avocado',
+      'Lettuce',
+      'Tomato',
+      'Radish',
+      'Onion',
+    ]
+  },
+  {
+    name: 'Veggie Burger',
+    ingredients: [
+      'Bun',
+      'Mushroom',
+      'Fried Egg',
+      'Cheese',
+      'Avocado',
+      'Veggie Patty',
+      'Lettuce',
+      'Pickles'
     ]
   },
 ]
@@ -63,8 +125,8 @@ const tools = [
 ]
 const ingredients = [
     {
-    name: 'Bread',
-    imageLink: 'https://openclipart.org/download/249336/bread.svg',
+    name: 'Bun',
+    imageLink: 'http://clipart-library.com/data_images/421595.jpg',
     },
     {
     name: 'Lettuce',
@@ -95,7 +157,7 @@ const ingredients = [
     imageLink: 'https://openclipart.org/download/209517/food-bacon.svg',
     },
     {
-    name: 'Mushrooms',
+    name: 'Mushroom',
     imageLink: 'https://openclipart.org/download/26150/johnny-automatic-mushrooms-1.svg',
     },
     {
@@ -103,7 +165,7 @@ const ingredients = [
     imageLink: 'https://openclipart.org/download/22454/laobc-Avocado.svg',
     },
     {
-    name: 'Fried egg',
+    name: 'Fried Egg',
     imageLink: 'https://openclipart.org/download/23677/papapishu-Fried-egg.svg',
     },
     {
@@ -234,7 +296,7 @@ function crossOffItem(event) {
 }
 
 function runClock() {
-  let timeRemaining = 10;
+  let timeRemaining = 30;
   let clockElement = document.getElementById('clock');
 
   let timerId = setInterval(countdown, 1000);
