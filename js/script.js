@@ -184,12 +184,11 @@ function randomizeIngredientImages() {
   let shuffledIngredients = shuffle(ingredients.slice());
 
   for (i = 0; i < ingredientImageDivs.length; i++) {
-    let image = document.createElement('img');
-    image.name = shuffledIngredients[i].name;
-    image.src = shuffledIngredients[i].imageLink;
-    image.style.maxHeight = '100%';
-    image.style.maxWidth = '100%';
-    ingredientImageDivs[i].appendChild(image);
+    let imageDiv = document.createElement('div');
+    imageDiv.name = shuffledIngredients[i].name;
+    imageDiv.style.backgroundImage = 'url(' + shuffledIngredients[i].imageLink + ')';
+    imageDiv.className = 'ingredient';
+    ingredientImageDivs[i].appendChild(imageDiv);
     ingredientImageDivs[i].addEventListener('click', crossOffItem);
     ingredientImageDivs[i].addEventListener('click', switchout);
   }
@@ -235,7 +234,7 @@ function crossOffItem(event) {
 }
 
 function runClock() {
-  let timeRemaining = 30;
+  let timeRemaining = 10;
   let clockElement = document.getElementById('clock');
 
   let timerId = setInterval(countdown, 1000);
@@ -244,6 +243,11 @@ function runClock() {
     if (timeRemaining == 0) {
       clearTimeout(timerId);
       clockElement.textContent = `Time's up!`;
+      let ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
+      for (let i = 0; i < ingredientImageDivs.length; i++) {
+        ingredientImageDivs[i].removeEventListener('click', crossOffItem);
+        ingredientImageDivs[i].removeEventListener('click', switchout);
+      };
       return false;
     } else {
       // make this a progress bar
@@ -254,14 +258,46 @@ function runClock() {
 }
 
 function startGame() {
+
+  let startingScore = document.createElement('h1');
+  let score = document.getElementById('score');
   let newTicket = createRandomOrderTicket;
   let activeOrderTicket;
+  let ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
+  let ingredientDivs = document.getElementsByClassName('ingredient');
+  // Remove all order tickets left over from previous game
+  for (i = 0; i < orderTicketsDiv.children.length; i++) {
+    orderTicketsDiv.children[i].remove();
+  }
+  // Remove score left over from previous game
+  for (i = 0; i < score.children.length; i++) {
+    score.children[i].remove();
+  }
+
+  // Remove ingredients left over from previous game
+  if (ingredientDivs) {
+    for (i = ingredientDivs.length -1 ; i >= 0; i--) {
+      ingredientDivs[i].remove();
+    }
+  }
+
+  startingScore.textContent = 0;
+  score.appendChild(startingScore);
+
+
+
+
   runClock();
   randomizeIngredientImages();
   // make new ticket
   newTicket();
   newTicket();
   newTicket();
+  newTicket();
+  let orderTickets = document.querySelectorAll('.order-ticket');
+  orderTickets.forEach((ticket, i) => {
+    ticket.style.left = i * 180 + 'px';
+  });
   // make the ticket active
   orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
   activeOrderTicket = document.getElementById('active-ticket');
@@ -284,7 +320,10 @@ function isListComplete() {
   }
 }
 
-
+function scorePoint() {
+  let score = document.getElementById('score');
+  score.children[0].textContent++;
+}
 
 function switchout() {
   if (isListComplete()) {
@@ -308,6 +347,7 @@ function switchout() {
       orderTickets.forEach((ticket1,i1) => {
         ticket1.style.left = i1 * 180 + 'px';
       });
-    }, 2000);
+      scorePoint();
+    }, 10);
   }
 }
