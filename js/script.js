@@ -260,20 +260,12 @@ function startGame() {
   randomizeIngredientImages();
   // make new ticket
   newTicket();
+  newTicket();
+  newTicket();
   // make the ticket active
   orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
   activeOrderTicket = document.getElementById('active-ticket');
   activeOrderTicket.setAttribute('complete', 'false');
-
-
-  // while (runClock !== false) {
-  // //   // when all active elements are crossed off
-  //   let checkComplete = isListComplete();
-  //   if (activeOrderTicket.complete === true) {
-  //     switchout();
-  // //   //   // increment burger counter
-  //   }
-  // }
 }
 
 // function to check when all items on recipe list are checked off,
@@ -293,20 +285,29 @@ function isListComplete() {
 }
 
 
-// while (activeOrderTicket.complete === false) {
+
 function switchout() {
   if (isListComplete()) {
     setTimeout(() => {
+      let orderTickets = document.querySelectorAll('.order-ticket');
+
       // generate new recipe at end of array
       createRandomOrderTicket();
+
+      orderTickets.forEach((ticket, i) => {
+        ticket.style.left = i * 180 + 'px';
+      });
       // shift recipe from order tickets
       orderTicketsDiv.children[0].remove();
       // make next recipe in array the order-ticket active-ticket class
       orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
       orderTicketsDiv.children[0].setAttribute('complete', 'false');
-    }, 255);
+
+      // Move position of all tickets
+      orderTickets = document.querySelectorAll('.order-ticket');
+      orderTickets.forEach((ticket1,i1) => {
+        ticket1.style.left = i1 * 180 + 'px';
+      });
+    }, 2000);
   }
 }
-
-
-// slide all recipes over
