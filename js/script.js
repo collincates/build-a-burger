@@ -241,14 +241,16 @@ function runClock() {
 
   function countdown() {
     if (timeRemaining == 0) {
+      clockElement.textContent = `${timeRemaining}`;
       clearTimeout(timerId);
-      clockElement.textContent = `Time's up!`;
+      clockElement.textContent = "Score:";
       let ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
       for (let i = 0; i < ingredientImageDivs.length; i++) {
         ingredientImageDivs[i].removeEventListener('click', crossOffItem);
         ingredientImageDivs[i].removeEventListener('click', switchout);
       };
-      return false;
+      startButton.addEventListener('click', startGame);
+
     } else {
       // make this a progress bar
       clockElement.textContent = `${timeRemaining}`;
@@ -258,7 +260,7 @@ function runClock() {
 }
 
 function startGame() {
-
+  startButton.removeEventListener('click', startGame);
   let startingScore = document.createElement('h1');
   let score = document.getElementById('score');
   let newTicket = createRandomOrderTicket;
@@ -284,9 +286,6 @@ function startGame() {
   startingScore.textContent = 0;
   score.appendChild(startingScore);
 
-
-
-
   runClock();
   randomizeIngredientImages();
   // make new ticket
@@ -303,6 +302,7 @@ function startGame() {
   activeOrderTicket = document.getElementById('active-ticket');
   activeOrderTicket.setAttribute('complete', 'false');
 }
+
 
 // function to check when all items on recipe list are checked off,
 function isItemCrossedOut(listItem) {
