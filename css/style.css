@@ -5,8 +5,9 @@ body {
 }
 
 .wrapper {
-  max-width: 800px;
   min-width: 400px;
+  max-width: 800px;
+  max-height: 750px;
   padding: 1rem;
   margin: auto;
   margin-top: 10px;
@@ -37,48 +38,64 @@ body {
 
 #score-and-clock {
   display: inline-block;
+  vertical-align: top;
   height: 100%;
   width: 37%;
-  /* border: 1px solid black; */
 }
 
 #clock {
-  position: relative;
   height: 30%;
   text-align: center;
-  border: 1px solid black;
   font-size: 60px;
   font-weight: bold;
 }
 
 #score {
-  /* height: 100px; */
-  border: 1px solid black;
+
+  display: block;
+  height: 70%;
+  /* height: 100%;
+  width: 100%; */
+}
+
+#score > img {
+  display: block;
+  margin: auto;
+  height: 100%;
 
 }
 
 #order-ticketing {
   display: inline-block;
+  vertical-align: top;
   height: 100%;
   width: 58%;
-  /* border: 1px solid blue; */
+  background-color: gray;
 }
 
 .content-wrapper {
   height: 100%;
   overflow: hidden;
   justify-content: flex-start;
+  border: 2px solid green;
 }
 
 #order-tickets {
   display: flex;
-  /* border: 1px solid red; */
+  /* flex-direction: row-reverse; */
+  border: 1px solid red;
   height: 100%;
-  width: 600px;
+  /* width: 100%; */
+  width: 840px;
+  position: relative;
+  float: left;
+  /* right: 360px; */
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .order-ticket {
-  position: relative;
+  position: absolute;
   box-shadow: 0px 0px 8px #aaaaaa;
   border-radius: 5px;
   height: 300px;
@@ -87,7 +104,19 @@ body {
   justify-content: flex-end;
   background-image: url('https://farm3.staticflickr.com/2189/1809766325_f7e23e7b8f_b.jpg');
   background-size: 100% 100%;
-  filter: opacity(60%);
+  filter: opacity(30%);
+  /* transition-property: left; */
+  transition: all 1s;
+  /* left: 180px; */
+}
+
+.order-ticket[complete='false'] {
+  color: fuchsia;
+
+}
+
+.order-ticket[complete='true'] {
+  left: 0px;
 }
 
 .order-ticket > h3 {
@@ -116,13 +145,14 @@ body {
   display: flex;
   padding: 1rem;
   margin: auto;
+  height: 300px;
   max-width: 700px;
 }
 
 .ingredient-image-container {
   box-shadow: 0px 0px 8px #aaaaaa;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   margin: 5px;
   background-color: white;
 }

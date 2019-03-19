@@ -18,8 +18,6 @@ const orderTicketData = [
       'Tomato',
       'Cheese',
       'Onion',
-      'Ketchup',
-      'Mustard',
     ]
   },
   {
@@ -154,18 +152,18 @@ startButton.addEventListener('click', startGame);
 
 
 function shuffle(array) {
-    let currentIndex = array.length;
-    let temporaryValue, randomIndex;
+  let currentIndex = array.length;
+  let temporaryValue, randomIndex;
 
-    while (0 != currentIndex) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
+  while (0 != currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-    return array;
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  return array;
 }
 
 
@@ -182,108 +180,132 @@ function shuffle(array) {
 // to ensure this randomization. randomizeIngredientImages is called at
 // the beginning of each game.
 function randomizeIngredientImages() {
-    const ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
-    let shuffledIngredients = shuffle(ingredients.slice());
+  const ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
+  let shuffledIngredients = shuffle(ingredients.slice());
 
-    for (i = 0; i < ingredientImageDivs.length; i++) {
-        let image = document.createElement('img');
-        image.name = shuffledIngredients[i].name;
-        image.src = shuffledIngredients[i].imageLink;
-        image.style.maxHeight = '100%';
-        image.style.maxWidth = '100%';
-        ingredientImageDivs[i].appendChild(image);
-        ingredientImageDivs[i].addEventListener('click', crossOffItem);
-    }
-
+  for (i = 0; i < ingredientImageDivs.length; i++) {
+    let image = document.createElement('img');
+    image.name = shuffledIngredients[i].name;
+    image.src = shuffledIngredients[i].imageLink;
+    image.style.maxHeight = '100%';
+    image.style.maxWidth = '100%';
+    ingredientImageDivs[i].appendChild(image);
+    ingredientImageDivs[i].addEventListener('click', crossOffItem);
+    ingredientImageDivs[i].addEventListener('click', switchout);
+  }
 }
 
 
 function createRandomOrderTicket() {
-    let shuffledOrderTickets = shuffle(orderTicketData.slice());
-    let currentTicket = shuffledOrderTickets.pop();
+  let shuffledOrderTickets = shuffle(orderTicketData.slice());
+  let currentTicket = shuffledOrderTickets.pop();
 
-    let orderTicket = document.createElement('div');
-    orderTicket.className = 'order-ticket';
+  let orderTicket = document.createElement('div');
+  orderTicket.className = 'order-ticket';
 
-    let h3 = document.createElement('h3');
-    h3.textContent = currentTicket.name;
-    orderTicket.appendChild(h3);
+  let h3 = document.createElement('h3');
+  h3.textContent = currentTicket.name;
+  orderTicket.appendChild(h3);
 
-    let ul = document.createElement('ul');
-    ul.className = 'recipe-items';
-    orderTicket.appendChild(ul);
+  let ul = document.createElement('ul');
+  ul.className = 'recipe-items';
+  orderTicket.appendChild(ul);
 
-    for (i = 0; i < currentTicket.ingredients.length; i++) {
-        let li = document.createElement('li')
-        li.textContent = currentTicket.ingredients[i];
-        ul.appendChild(li);
-    }
-
-    orderTicketsDiv.appendChild(orderTicket);
+  for (i = 0; i < currentTicket.ingredients.length; i++) {
+    let li = document.createElement('li')
+    li.textContent = currentTicket.ingredients[i];
+    ul.appendChild(li);
+  }
+  orderTicketsDiv.appendChild(orderTicket);
 }
+
 
 // function to click on ingredient image.
 function crossOffItem(event) {
-    let clickedIngredient = event.target;
-    let activeOrderTicket = document.getElementById('active-ticket');
-    let orderIngredientsList = activeOrderTicket.children[1].children;
+  let clickedIngredient = event.target;
+  let activeOrderTicket = document.getElementById('active-ticket');
+  let orderIngredientsList = activeOrderTicket.children[1].children;
 
-    for (i = 0; i < orderIngredientsList.length; i++) {
-        if (orderIngredientsList[i].textContent === clickedIngredient.name) {
-            orderIngredientsList[i].style.textDecoration = 'line-through wavy black';
-            // orderIngredientsList[i].style.backgroundColor = 'gray';
-        }
+  for (i = 0; i < orderIngredientsList.length; i++) {
+    if (orderIngredientsList[i].textContent === clickedIngredient.name) {
+      orderIngredientsList[i].style.textDecoration = 'line-through wavy black';
+      // orderIngredientsList[i].style.backgroundColor = 'gray';
     }
+  }
 }
 
-function startClock() {
-    let timeRemaining = 30;
-    let clockElement = document.getElementById('clock');
+function runClock() {
+  let timeRemaining = 30;
+  let clockElement = document.getElementById('clock');
 
-    let timerId = setInterval(countdown, 1000);
+  let timerId = setInterval(countdown, 1000);
 
-    function countdown() {
-      if (timeRemaining == 0) {
-        clearTimeout(timerId);
-        return;
-      } else {
-        clockElement.innerHTML = `${timeRemaining}`;
-        timeRemaining--;
-      }
+  function countdown() {
+    if (timeRemaining == 0) {
+      clearTimeout(timerId);
+      clockElement.textContent = `Time's up!`;
+      return false;
+    } else {
+      // make this a progress bar
+      clockElement.textContent = `${timeRemaining}`;
+      timeRemaining--;
     }
+  }
 }
 
 function startGame() {
-    let newTicket = createRandomOrderTicket;
-    let activeOrderTicket;
-    randomizeIngredientImages();
+  let newTicket = createRandomOrderTicket;
+  let activeOrderTicket;
+  runClock();
+  randomizeIngredientImages();
+  // make new ticket
+  newTicket();
+  // make the ticket active
+  orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
+  activeOrderTicket = document.getElementById('active-ticket');
+  activeOrderTicket.setAttribute('complete', 'false');
 
 
-
-    do {
-      newTicket();
-      orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
-      activeOrderTicket = document.getElementById('active-ticket');
-    } while (activeOrderTicket.complete === false);
+  // while (runClock !== false) {
+  // //   // when all active elements are crossed off
+  //   let checkComplete = isListComplete();
+  //   if (activeOrderTicket.complete === true) {
+  //     switchout();
+  // //   //   // increment burger counter
+  //   }
+  // }
 }
 
 // function to check when all items on recipe list are checked off,
-// while (activeOrderTicket.complete)
+function isItemCrossedOut(listItem) {
+  return listItem.style.textDecoration === 'line-through wavy black';
+}
+
+
+function isListComplete() {
+  let activeOrderTicket = document.getElementById('active-ticket');
+  let activeListItems = Array.from(activeOrderTicket.children[1].children);
+
+  if (activeListItems.every(isItemCrossedOut)) {
+    activeOrderTicket.setAttribute('complete', 'true');
+    return true;
+  }
+}
+
 
 // while (activeOrderTicket.complete === false) {
 function switchout() {
-  // generate new recipe at end of array
-    console.log(`length before create random ticket ${orderTicketsDiv.children.length}`);
-    createRandomOrderTicket();
-    console.log(`length after create random ticket ${orderTicketsDiv.children.length}`);
-  // shift recipe from order tickets
-    console.log(`length before remove children[0] ${orderTicketsDiv.children.length}`);
-    orderTicketsDiv.children[0].remove();
-    console.log(`length before after children[0] ${orderTicketsDiv.children.length}`);
-  // make next recipe in array the order-ticket active-ticket class
-    console.log(`length before set active ${orderTicketsDiv.children.length}`);
-    orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
-    console.log(`length after set active ${orderTicketsDiv.children.length}`);
+  if (isListComplete()) {
+    setTimeout(() => {
+      // generate new recipe at end of array
+      createRandomOrderTicket();
+      // shift recipe from order tickets
+      orderTicketsDiv.children[0].remove();
+      // make next recipe in array the order-ticket active-ticket class
+      orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
+      orderTicketsDiv.children[0].setAttribute('complete', 'false');
+    }, 255);
+  }
 }
 
 
