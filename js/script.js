@@ -212,6 +212,7 @@ const orderTicketsDiv = document.getElementById('order-tickets');
 const startButton = document.getElementById('start-button');
 startButton.addEventListener('click', startGame);
 
+startGame();
 
 function shuffle(array) {
   let currentIndex = array.length;
@@ -228,19 +229,7 @@ function shuffle(array) {
   return array;
 }
 
-
-// function to randomly place ingredients
-// should 'know' which ingredients are needed for the upcoming recipe(s) in the pipeline
-// and place those definitely, then fill the remaining slots with random stuff
-
-// the above function is called after a few recipes are done, more specifically,
-// after all of the NEEDED ingredients are used on the recipes
-
-
-// The ingredient images should appear in a different order every time
-// the game is played. This function uses the custom function shuffle(array)
-// to ensure this randomization. randomizeIngredientImages is called at
-// the beginning of each game.
+// Randomly place ingredients
 function randomizeIngredientImages() {
   const ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
   let shuffledIngredients = shuffle(ingredients.slice());
@@ -290,7 +279,6 @@ function crossOffItem(event) {
   for (i = 0; i < orderIngredientsList.length; i++) {
     if (orderIngredientsList[i].textContent === clickedIngredient.name) {
       orderIngredientsList[i].style.textDecoration = 'line-through wavy black';
-      // orderIngredientsList[i].style.backgroundColor = 'gray';
     }
   }
 }
