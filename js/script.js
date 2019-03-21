@@ -14,10 +14,10 @@ const orderTicketData = [
     name: 'Cheeseburger',
     ingredients: [
       'Bun',
+      'Meat',
       'Mushroom',
       'Avocado',
       'Cheese',
-      'Meat',
       'Pickle',
       'Lettuce'
     ]
@@ -26,11 +26,11 @@ const orderTicketData = [
     name: 'Cheeseburger',
     ingredients: [
       'Bun',
+      'Meat',
+      'Cheese',
       'Pineapple',
       'Egg',
-      'Meat',
       'Lettuce',
-      'Cheese',
       'Bacon'
     ]
   },
@@ -82,38 +82,36 @@ const orderTicketData = [
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Mustard',
+      'Meat',
       'Cheese',
       'Avocado',
       'Lettuce',
       'Tomato',
-      'Onion',
+      'Mustard',
     ]
   },
   {
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Mustard',
+      'Meat',
       'Cheese',
       'Avocado',
       'Lettuce',
-      'Tomato',
+      'Onion',
       'Ketchup',
-      'Onion',
     ]
   },
   {
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Mushroom',
-      'Egg',
+      'Meat',
       'Cheese',
       'Avocado',
       'Mustard',
       'Lettuce',
-      'Pickle'
+      'Egg',
     ]
   },
 ]
@@ -137,6 +135,11 @@ const tools = [
     name: 'Hourglass',
     imageMonochrome: './images/hourglass.svg',
     imageColor: './images/hourglass_color.svg',
+    },
+    {
+    name: 'Info Button',
+    imageMonochrome: './images/info_button.svg',
+    imageColor: './images/info_button.svg',
     },
 
 ]
@@ -218,12 +221,37 @@ const ingredients = [
     },
 ]
 
+
+let modal = document.getElementById('start-popup');
+
+let span = document.getElementsByClassName('close')[0];
+
+let infoButton = document.getElementById('info-button');
+
+let modalContentP = document.getElementsByClassName('modal-content')[0];
+
+span.addEventListener('click', function() {
+  modal.style.display = 'none';
+})
+
+
+window.onClick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
+// infoButton.addEventListener('click', function() {
+//   modal.style.display = 'flex';
+// })
+
 const orderTicketsDiv = document.getElementById('order-tickets');
 
 const startButton = document.getElementById('start-button');
 startButton.addEventListener('click', startGame);
 
-startGame();
+// startGame();
+modal.style.display = 'flex';
 
 function shuffle(array) {
   let currentIndex = array.length;
@@ -300,7 +328,11 @@ function runClock() {
     if (timeRemaining == 0) {
       clockElement.textContent = `${timeRemaining}`;
       clearTimeout(timerId);
-      clockElement.textContent = "Score:";
+      let score = document.getElementById('score');
+      let scoreText = document.createElement('p');
+      scoreText.textContent = `${score.children[0].textContent}`;
+      modalContentP.insertBefore(scoreText, modalContentP.children[0]);
+      modal.style.display = 'flex';
       let ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
       for (let i = 0; i < ingredientImageDivs.length; i++) {
         ingredientImageDivs[i].removeEventListener('click', crossOffItem);
@@ -309,7 +341,7 @@ function runClock() {
       startButton.addEventListener('click', startGame);
 
     } else {
-      // make this a progress bar
+      // TODO: Make this a progress bar?
       clockElement.textContent = `${timeRemaining}`;
       timeRemaining--;
     }
@@ -340,6 +372,10 @@ function startGame() {
     }
   }
 
+  // Remove score from popup modal
+  if (modalContentP.children.length == 2) {
+    modalContentP.children[0].remove();
+  }
   startingScore.textContent = 0;
   score.appendChild(startingScore);
 
