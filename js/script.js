@@ -18,7 +18,7 @@ const orderTicketData = [
       'Avocado',
       'Cheese',
       'Meat',
-      'Pickles',
+      'Pickle',
       'Lettuce'
     ]
   },
@@ -27,7 +27,7 @@ const orderTicketData = [
     ingredients: [
       'Bun',
       'Pineapple',
-      'Fried Egg',
+      'Egg',
       'Meat',
       'Lettuce',
       'Cheese',
@@ -49,7 +49,7 @@ const orderTicketData = [
     ingredients: [
       'Bun',
       'Meat',
-      'Pickles',
+      'Pickle',
       'Lettuce',
       'Tomato',
       'Onion',
@@ -64,14 +64,14 @@ const orderTicketData = [
       'Lettuce',
       'Tomato',
       'Onion',
-      'Pickles'
+      'Pickle'
     ]
   },
   {
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Veggie Patty',
+      'Mustard',
       'Cheese',
       'Lettuce',
       'Tomato',
@@ -82,7 +82,7 @@ const orderTicketData = [
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Veggie Patty',
+      'Mustard',
       'Cheese',
       'Avocado',
       'Lettuce',
@@ -94,12 +94,12 @@ const orderTicketData = [
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Veggie Patty',
+      'Mustard',
       'Cheese',
       'Avocado',
       'Lettuce',
       'Tomato',
-      'Radish',
+      'Ketchup',
       'Onion',
     ]
   },
@@ -108,105 +108,116 @@ const orderTicketData = [
     ingredients: [
       'Bun',
       'Mushroom',
-      'Fried Egg',
+      'Egg',
       'Cheese',
       'Avocado',
-      'Veggie Patty',
+      'Mustard',
       'Lettuce',
-      'Pickles'
+      'Pickle'
     ]
   },
 ]
 const tools = [
     {
     name: 'Spatula',
-    imageLink: 'https://openclipart.org/download/28810/purzen-Cartoon-spatula.svg',
-    }
+    imageMonochrome: './images/spatula.svg',
+    imageColor: './images/spatula_color.svg',
+    },
+    {
+    name: 'Ticket',
+    imageMonochrome: './images/ticket.svg',
+    imageColor: './images/ticket_color.svg',
+    },
+    {
+    name: 'Burger',
+    imageMonochrome: './images/burger.svg',
+    imageColor: './images/burger_color.svg',
+    },
+    {
+    name: 'Hourglass',
+    imageMonochrome: './images/hourglass.svg',
+    imageColor: './images/hourglass_color.svg',
+    },
+
 ]
 const ingredients = [
     {
     name: 'Bun',
-    imageLink: 'http://clipart-library.com/data_images/421595.jpg',
+    imageMonochrome: './images/bun.svg',
+    imageColor: './images/bun_color.svg',
     },
     {
     name: 'Lettuce',
-    imageLink: 'https://openclipart.org/download/291386/iceberg-lettuce.svg',
+    imageMonochrome: './images/lettuce.svg',
+    imageColor: './images/lettuce_color.svg',
     },
     {
     name: 'Tomato',
-    imageLink: 'https://openclipart.org/download/225413/mini-tomato.svg',
+    imageMonochrome: './images/tomato.svg',
+    imageColor: './images/tomato_color.svg',
     },
     {
     name: 'Meat',
-    imageLink: 'https://openclipart.org/download/295935/1517841160.svg',
+    imageMonochrome: './images/meat.svg',
+    imageColor: './images/meat_color.svg',
     },
     {
     name: 'Cheese',
-    imageLink: 'https://openclipart.org/download/1696/nodanero-Cheese.svg',
+    imageMonochrome: './images/cheese.svg',
+    imageColor: './images/cheese_color.svg',
     },
     {
     name: 'Onion',
-    imageLink: 'https://openclipart.org/download/177511/oignon.svg',
+    imageMonochrome: './images/onion.svg',
+    imageColor: './images/onion_color.svg',
     },
     {
-    name: 'Pickles',
-    imageLink: 'https://openclipart.org/download/268438/picklesinajar.svg',
+    name: 'Pickle',
+    imageMonochrome: './images/pickle.svg',
+    imageColor: './images/pickle_color.svg',
     },
     {
     name: 'Bacon',
-    imageLink: 'https://openclipart.org/download/209517/food-bacon.svg',
+    imageMonochrome: './images/bacon.svg',
+    imageColor: './images/bacon_color.svg',
     },
     {
     name: 'Mushroom',
-    imageLink: 'https://openclipart.org/download/26150/johnny-automatic-mushrooms-1.svg',
+    imageMonochrome: './images/mushroom.svg',
+    imageColor: './images/mushroom_color.svg',
     },
     {
     name: 'Avocado',
-    imageLink: 'https://openclipart.org/download/22454/laobc-Avocado.svg',
+    imageMonochrome: './images/avocado.svg',
+    imageColor: './images/avocado_color.svg',
     },
     {
-    name: 'Fried Egg',
-    imageLink: 'https://openclipart.org/download/23677/papapishu-Fried-egg.svg',
-    },
-    {
-    name: 'Veggie Patty',
-    imageLink: 'https://openclipart.org/download/209651/food-potato-patty.svg',
+    name: 'Egg',
+    imageMonochrome: './images/egg.svg',
+    imageColor: './images/egg_color.svg',
     },
     {
     name: 'Pineapple',
-    imageLink: 'https://openclipart.org/download/248815/Pineapple3.svg',
+    imageMonochrome: './images/pineapple.svg',
+    imageColor: './images/pineapple_color.svg',
     },
     {
-    name: 'Radish',
-    imageLink: 'https://openclipart.org/download/291387/radishes.svg',
-    },
-    {
-    name: 'French Fries',
-    imageLink: 'https://openclipart.org/download/314326/1548611385.svg',
-    },
-]
-const condiments = [
-    {
-    name: 'Ketchup',
-    imageLink: 'https://openclipart.org/download/298505/ketchup-bottle-publicdomainvectors.svg',
+      name: 'Ketchup',
+      imageMonochrome: './images/ketchup.svg',
+      imageColor: './images/ketchup_color.svg',
     },
     {
     name: 'Mustard',
-    imageLink: ''
+    imageMonochrome: './images/mustard.svg',
+    imageColor: './images/mustard_color.svg',
     },
     {
-    name: 'Mayonnaise',
-    imageLink: '',
-    },
-    {
-    name: 'BBQ sauce',
-    imageLink: '',
-    },
-    {
-    name: '',
-    imageLink: '',
+    name: 'Fries',
+    imageMonochrome: './images/fries.svg',
+    imageColor: './images/fries_color.svg',
     },
 ]
+
 const orderTicketsDiv = document.getElementById('order-tickets');
 
 const startButton = document.getElementById('start-button');
@@ -237,7 +248,7 @@ function randomizeIngredientImages() {
   for (i = 0; i < ingredientImageDivs.length; i++) {
     let imageDiv = document.createElement('div');
     imageDiv.name = shuffledIngredients[i].name;
-    imageDiv.style.backgroundImage = 'url(' + shuffledIngredients[i].imageLink + ')';
+    imageDiv.style.backgroundImage = 'url(' + shuffledIngredients[i].imageColor + ')';
     imageDiv.className = 'ingredient';
     ingredientImageDivs[i].appendChild(imageDiv);
     ingredientImageDivs[i].addEventListener('click', crossOffItem);
@@ -252,10 +263,6 @@ function createRandomOrderTicket() {
 
   let orderTicket = document.createElement('div');
   orderTicket.className = 'order-ticket';
-
-  let h3 = document.createElement('h3');
-  h3.textContent = currentTicket.name;
-  orderTicket.appendChild(h3);
 
   let ul = document.createElement('ul');
   ul.className = 'recipe-items';
@@ -274,7 +281,7 @@ function createRandomOrderTicket() {
 function crossOffItem(event) {
   let clickedIngredient = event.target;
   let activeOrderTicket = document.getElementById('active-ticket');
-  let orderIngredientsList = activeOrderTicket.children[1].children;
+  let orderIngredientsList = activeOrderTicket.children[0].children;
 
   for (i = 0; i < orderIngredientsList.length; i++) {
     if (orderIngredientsList[i].textContent === clickedIngredient.name) {
@@ -345,7 +352,7 @@ function startGame() {
   newTicket();
   let orderTickets = document.querySelectorAll('.order-ticket');
   orderTickets.forEach((ticket, i) => {
-    ticket.style.left = i * 180 + 'px';
+    ticket.style.left = i * 210 + 'px';
   });
   // make the ticket active
   orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
@@ -362,7 +369,7 @@ function isItemCrossedOut(listItem) {
 
 function isListComplete() {
   let activeOrderTicket = document.getElementById('active-ticket');
-  let activeListItems = Array.from(activeOrderTicket.children[1].children);
+  let activeListItems = Array.from(activeOrderTicket.children[0].children);
 
   if (activeListItems.every(isItemCrossedOut)) {
     activeOrderTicket.setAttribute('complete', 'true');
@@ -384,7 +391,7 @@ function switchout() {
       createRandomOrderTicket();
 
       orderTickets.forEach((ticket, i) => {
-        ticket.style.left = i * 180 + 'px';
+        ticket.style.left = i * 210 + 'px';
       });
       // shift recipe from order tickets
       orderTicketsDiv.children[0].remove();
@@ -395,7 +402,7 @@ function switchout() {
       // Move position of all tickets
       orderTickets = document.querySelectorAll('.order-ticket');
       orderTickets.forEach((ticket1,i1) => {
-        ticket1.style.left = i1 * 180 + 'px';
+        ticket1.style.left = i1 * 210 + 'px';
       });
       scorePoint();
     }, 10);
