@@ -10,6 +10,7 @@ body {
   height: 100vh;
   padding: 2%;
   margin: auto;
+  border: 4px solid black;
 }
 
 .modal {
@@ -31,12 +32,8 @@ body {
   width: 50%;
   height: 50%;
   position: relative;
-  font-size: calc(55px + (60 - 45) * ((100vw - 360px) / (1028 - 360)));
+  font-size: calc(70px + (80 - 70) * ((100vw - 360px) / (1028 - 360)));
   color: black;
-  /* text-shadow: -2px -2px 0 black,
-               -2px 2px 0 black,
-               2px -2px 0 black,
-               2px 2px 0 black; */
 }
 
 .close {
@@ -72,16 +69,10 @@ body {
   height: 35px;
   bottom: 5%;
   right: 5%;
-  /* float: right; */
-  /* align-items: baseline; */
 }
 
 #top {
-  /* align-items: center; */
   height: 20%;
-  /* height: calc(60px + (90 - 60) * ((100vw - 360px) / (1028 - 360))); */
-  /* width: 100%; */
-  /* text-shadow: 0px 0px 8px gray; */
 }
 
 #score-and-clock {
@@ -104,15 +95,8 @@ body {
   background-size: contain;
   margin: auto;
   text-align: center;
-  font-weight: bold;
-  font-size: calc(55px + (60 - 45) * ((100vw - 360px) / (1028 - 360)));
-  /* font-weight: bold; */
+  font-size: calc(70px + (80 - 70) * ((100vw - 360px) / (1028 - 360)));
   color: black;
-  /* text-shadow: -2px -2px 0px black,
-               -2px 2px 0px black,
-               2px -2px 0px black,
-               2px 2px 0px black; */
-  /* filter: opacity(60%); */
 }
 
 #score {
@@ -127,17 +111,12 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   margin: auto;
-  /* filter: opacity(60%); */
 }
 
-#score > h1 {
+#score > div {
   position: relative;
-  font-size: calc(55px + (60 - 45) * ((100vw - 360px) / (1028 - 360)));
+  font-size: calc(70px + (80 - 70) * ((100vw - 360px) / (1028 - 360)));
   color: black;
-  /* text-shadow: -2px -2px 0 black,
-               -2px 2px 0 black,
-               2px -2px 0 black,
-               2px 2px 0 black; */
 }
 
 #middle {
@@ -153,7 +132,7 @@ body {
   width: 100%;
 }
 
-.content-wrapper {
+.order-ticket-wrapper {
   height: 100%;
   overflow: hidden;
   justify-content: flex-start;
@@ -174,8 +153,6 @@ body {
   height: 98%;
   width: 200px;
   margin: 0.5%;
-
-  /* box-shadow: 0px 0px 8px #aaaaaa; */
   filter: opacity(30%);
   transition: left .1s;
 }
@@ -186,7 +163,6 @@ body {
   left: 15px;
   font-size: 20px;
   font-weight: bold;
-  /* color: gray; */
   position: relative;
   margin: auto;
 }
@@ -197,7 +173,6 @@ body {
 }
 
 #bottom {
-  /* padding: 2%; */
   margin: auto;
   height: 40%;
   width: 100%;

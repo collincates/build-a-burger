@@ -4,9 +4,9 @@ const orderTicketData = [
     ingredients: [
       'Bun',
       'Meat',
+      'Cheese',
       'Lettuce',
       'Tomato',
-      'Cheese',
       'Onion',
     ]
   },
@@ -15,11 +15,11 @@ const orderTicketData = [
     ingredients: [
       'Bun',
       'Meat',
+      'Cheese',
       'Mushroom',
       'Avocado',
-      'Cheese',
       'Pickle',
-      'Lettuce'
+      'Lettuce',
     ]
   },
   {
@@ -28,10 +28,10 @@ const orderTicketData = [
       'Bun',
       'Meat',
       'Cheese',
+      'Lettuce',
       'Pineapple',
       'Egg',
-      'Lettuce',
-      'Bacon'
+      'Bacon',
     ]
   },
   {
@@ -41,7 +41,6 @@ const orderTicketData = [
       'Meat',
       'Lettuce',
       'Tomato',
-      'Onion',
     ]
   },
   {
@@ -60,18 +59,17 @@ const orderTicketData = [
     ingredients: [
       'Bun',
       'Meat',
-      'Pineapple',
       'Lettuce',
       'Tomato',
       'Onion',
-      'Pickle'
+      'Pineapple',
     ]
   },
   {
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Mustard',
+      'Mushroom',
       'Cheese',
       'Lettuce',
       'Tomato',
@@ -82,7 +80,6 @@ const orderTicketData = [
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Meat',
       'Cheese',
       'Avocado',
       'Lettuce',
@@ -94,7 +91,6 @@ const orderTicketData = [
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Meat',
       'Cheese',
       'Avocado',
       'Lettuce',
@@ -106,9 +102,9 @@ const orderTicketData = [
     name: 'Veggie Burger',
     ingredients: [
       'Bun',
-      'Meat',
-      'Cheese',
       'Avocado',
+      'Mushroom',
+      'Cheese',
       'Mustard',
       'Lettuce',
       'Egg',
@@ -116,16 +112,6 @@ const orderTicketData = [
   },
 ]
 const tools = [
-    {
-    name: 'Spatula',
-    imageMonochrome: './images/spatula.svg',
-    imageColor: './images/spatula_color.svg',
-    },
-    {
-    name: 'Ticket',
-    imageMonochrome: './images/ticket.svg',
-    imageColor: './images/ticket_color.svg',
-    },
     {
     name: 'Burger',
     imageMonochrome: './images/burger.svg',
@@ -141,68 +127,47 @@ const tools = [
     imageMonochrome: './images/info_button.svg',
     imageColor: './images/info_button.svg',
     },
-
+    {
+      name: 'Spatula',
+      imageMonochrome: './images/spatula.svg',
+      imageColor: './images/spatula_color.svg',
+    },
+    {
+      name: 'Ticket',
+      imageMonochrome: './images/ticket.svg',
+      imageColor: './images/ticket_color.svg',
+    },
 ]
 const ingredients = [
     {
-    name: 'Bun',
-    imageMonochrome: './images/bun.svg',
-    imageColor: './images/bun_color.svg',
+      name: 'Avocado',
+      imageMonochrome: './images/avocado.svg',
+      imageColor: './images/avocado_color.svg',
     },
     {
-    name: 'Lettuce',
-    imageMonochrome: './images/lettuce.svg',
-    imageColor: './images/lettuce_color.svg',
+      name: 'Bacon',
+      imageMonochrome: './images/bacon.svg',
+      imageColor: './images/bacon_color.svg',
     },
     {
-    name: 'Tomato',
-    imageMonochrome: './images/tomato.svg',
-    imageColor: './images/tomato_color.svg',
+      name: 'Bun',
+      imageMonochrome: './images/bun.svg',
+      imageColor: './images/bun_color.svg',
     },
     {
-    name: 'Meat',
-    imageMonochrome: './images/meat.svg',
-    imageColor: './images/meat_color.svg',
+      name: 'Cheese',
+      imageMonochrome: './images/cheese.svg',
+      imageColor: './images/cheese_color.svg',
     },
     {
-    name: 'Cheese',
-    imageMonochrome: './images/cheese.svg',
-    imageColor: './images/cheese_color.svg',
+      name: 'Egg',
+      imageMonochrome: './images/egg.svg',
+      imageColor: './images/egg_color.svg',
     },
     {
-    name: 'Onion',
-    imageMonochrome: './images/onion.svg',
-    imageColor: './images/onion_color.svg',
-    },
-    {
-    name: 'Pickle',
-    imageMonochrome: './images/pickle.svg',
-    imageColor: './images/pickle_color.svg',
-    },
-    {
-    name: 'Bacon',
-    imageMonochrome: './images/bacon.svg',
-    imageColor: './images/bacon_color.svg',
-    },
-    {
-    name: 'Mushroom',
-    imageMonochrome: './images/mushroom.svg',
-    imageColor: './images/mushroom_color.svg',
-    },
-    {
-    name: 'Avocado',
-    imageMonochrome: './images/avocado.svg',
-    imageColor: './images/avocado_color.svg',
-    },
-    {
-    name: 'Egg',
-    imageMonochrome: './images/egg.svg',
-    imageColor: './images/egg_color.svg',
-    },
-    {
-    name: 'Pineapple',
-    imageMonochrome: './images/pineapple.svg',
-    imageColor: './images/pineapple_color.svg',
+      name: 'Fries',
+      imageMonochrome: './images/fries.svg',
+      imageColor: './images/fries_color.svg',
     },
     {
       name: 'Ketchup',
@@ -210,57 +175,80 @@ const ingredients = [
       imageColor: './images/ketchup_color.svg',
     },
     {
-    name: 'Mustard',
-    imageMonochrome: './images/mustard.svg',
-    imageColor: './images/mustard_color.svg',
+      name: 'Lettuce',
+      imageMonochrome: './images/lettuce.svg',
+      imageColor: './images/lettuce_color.svg',
     },
     {
-    name: 'Fries',
-    imageMonochrome: './images/fries.svg',
-    imageColor: './images/fries_color.svg',
+      name: 'Meat',
+      imageMonochrome: './images/meat.svg',
+      imageColor: './images/meat_color.svg',
+    },
+    {
+      name: 'Mushroom',
+      imageMonochrome: './images/mushroom.svg',
+      imageColor: './images/mushroom_color.svg',
+    },
+    {
+      name: 'Mustard',
+      imageMonochrome: './images/mustard.svg',
+      imageColor: './images/mustard_color.svg',
+    },
+    {
+      name: 'Onion',
+      imageMonochrome: './images/onion.svg',
+      imageColor: './images/onion_color.svg',
+    },
+    {
+      name: 'Pickle',
+      imageMonochrome: './images/pickle.svg',
+      imageColor: './images/pickle_color.svg',
+    },
+    {
+      name: 'Pineapple',
+      imageMonochrome: './images/pineapple.svg',
+      imageColor: './images/pineapple_color.svg',
+    },
+    {
+      name: 'Tomato',
+      imageMonochrome: './images/tomato.svg',
+      imageColor: './images/tomato_color.svg',
     },
 ]
 
-
-let modal = document.getElementById('start-popup');
-
-let span = document.getElementsByClassName('close')[0];
-
-let infoButton = document.getElementById('info-button');
-
-let modalContentP = document.getElementsByClassName('modal-content')[0];
-
-span.addEventListener('click', function() {
-  modal.style.display = 'none';
-})
-
-
-window.onClick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-}
-
-// infoButton.addEventListener('click', function() {
-//   modal.style.display = 'flex';
-// })
-
-const orderTicketsDiv = document.getElementById('order-tickets');
-
+const startPopup = document.getElementById('start-popup');
+const startPopupContentParagraph = startPopup.children[0];
 const startButton = document.getElementById('start-button');
+const score = document.getElementById('score');
+const orderTicketsDiv = document.getElementById('order-tickets');
+const ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
+
+startButton.addEventListener('click', hideStartPopup);
 startButton.addEventListener('click', startGame);
 
-// startGame();
-modal.style.display = 'flex';
+// let infoButton = document.getElementById('info-button');
+// infoButton.addEventListener('click', function() {
+//   showStartPopup();
+// })
+
+function showStartPopup() {
+  startPopup.style.display = 'flex';
+}
+
+function hideStartPopup() {
+  startPopup.style.display = 'none';
+}
 
 function shuffle(array) {
+  // This function will mutate the original array and should
+  // accept a slice or copy of the original array instead.
   let currentIndex = array.length;
   let temporaryValue, randomIndex;
 
+  // Iterate backwards through array, randomizing the indexes of all items
   while (0 != currentIndex) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex -= 1;
-
     temporaryValue = array[currentIndex];
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
@@ -268,9 +256,8 @@ function shuffle(array) {
   return array;
 }
 
-// Randomly place ingredients
-function randomizeIngredientImages() {
-  const ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
+function randomlyPlaceIngredientImages() {
+  // Slice the array to prevent mutation of the original
   let shuffledIngredients = shuffle(ingredients.slice());
 
   for (i = 0; i < ingredientImageDivs.length; i++) {
@@ -280,37 +267,36 @@ function randomizeIngredientImages() {
     imageDiv.className = 'ingredient';
     ingredientImageDivs[i].appendChild(imageDiv);
     ingredientImageDivs[i].addEventListener('click', crossOffItem);
-    ingredientImageDivs[i].addEventListener('click', switchout);
+    ingredientImageDivs[i].addEventListener('click', switchOrderTicket);
   }
 }
 
-
 function createRandomOrderTicket() {
   let shuffledOrderTickets = shuffle(orderTicketData.slice());
-  let currentTicket = shuffledOrderTickets.pop();
+  let randomTicket = shuffledOrderTickets.pop();
 
   let orderTicket = document.createElement('div');
   orderTicket.className = 'order-ticket';
 
-  let ul = document.createElement('ul');
-  ul.className = 'recipe-items';
-  orderTicket.appendChild(ul);
+  let ingredientsUL = document.createElement('ul');
+  ingredientsUL.className = 'recipe-items';
+  orderTicket.appendChild(ingredientsUL);
 
-  for (i = 0; i < currentTicket.ingredients.length; i++) {
-    let li = document.createElement('li')
-    li.textContent = currentTicket.ingredients[i];
-    ul.appendChild(li);
+  for (i = 0; i < randomTicket.ingredients.length; i++) {
+    let ingredientLI = document.createElement('li')
+    ingredientLI.textContent = randomTicket.ingredients[i];
+    ingredientsUL.appendChild(ingredientLI);
   }
   orderTicketsDiv.appendChild(orderTicket);
 }
 
-
-// function to click on ingredient image.
 function crossOffItem(event) {
   let clickedIngredient = event.target;
   let activeOrderTicket = document.getElementById('active-ticket');
   let orderIngredientsList = activeOrderTicket.children[0].children;
 
+  // Check all ingredients on the active ticket for a value
+  // that matches the name of the clicked ingredient.
   for (i = 0; i < orderIngredientsList.length; i++) {
     if (orderIngredientsList[i].textContent === clickedIngredient.name) {
       orderIngredientsList[i].style.textDecoration = 'line-through wavy black';
@@ -318,25 +304,64 @@ function crossOffItem(event) {
   }
 }
 
-function runClock() {
-  let timeRemaining = 30;
-  let clockElement = document.getElementById('clock');
+function isListComplete() {
+  let activeOrderTicket = document.getElementById('active-ticket');
+  let activeListItems = Array.from(activeOrderTicket.children[0].children);
 
+  function isItemCrossedOut(listItem) {
+    return listItem.style.textDecoration === 'line-through wavy black';
+  }
+
+  if (activeListItems.every(isItemCrossedOut)) {
+    return true;
+  }
+}
+
+function distributeTicketSpacing() {
+    let orderTickets = document.querySelectorAll('.order-ticket');
+    // Move position of all tickets
+
+    orderTickets.forEach((ticket1,i1) => {
+      ticket1.style.left = i1 * 210 + 'px';
+    });
+}
+
+function switchOrderTicket() {
+  if (isListComplete()) {
+    // Push new order ticket onto array
+    createRandomOrderTicket();
+    // Shift completed order ticket from array
+    orderTicketsDiv.children[0].remove();
+    // Make the current first ticket active
+    orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
+    // Make sure the newly added ticket is spaced correctly
+    distributeTicketSpacing();
+    // Increment the game score for the completed ticket
+    score.children[0].textContent++;
+  }
+}
+
+function tallyScore() {
+  let scoreText = document.createElement('p');
+  scoreText.textContent = `${score.children[0].textContent}`;
+  startPopupContentParagraph.insertBefore(scoreText, startButton);
+}
+
+
+function runClock(duration) {
+  let timeRemaining = duration;
+  let clockElement = document.getElementById('clock');
   let timerId = setInterval(countdown, 1000);
 
   function countdown() {
     if (timeRemaining == 0) {
       clockElement.textContent = `${timeRemaining}`;
       clearTimeout(timerId);
-      let score = document.getElementById('score');
-      let scoreText = document.createElement('p');
-      scoreText.textContent = `${score.children[0].textContent}`;
-      modalContentP.insertBefore(scoreText, modalContentP.children[0]);
-      modal.style.display = 'flex';
-      let ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
+      tallyScore();
+      showStartPopup();
       for (let i = 0; i < ingredientImageDivs.length; i++) {
         ingredientImageDivs[i].removeEventListener('click', crossOffItem);
-        ingredientImageDivs[i].removeEventListener('click', switchout);
+        ingredientImageDivs[i].removeEventListener('click', switchOrderTicket);
       };
       startButton.addEventListener('click', startGame);
 
@@ -348,21 +373,16 @@ function runClock() {
   }
 }
 
-function startGame() {
-  startButton.removeEventListener('click', startGame);
-  let startingScore = document.createElement('h1');
-  let score = document.getElementById('score');
-  let newTicket = createRandomOrderTicket;
-  let activeOrderTicket;
-  let ingredientImageDivs = document.getElementsByClassName('ingredient-image-container');
+function resetGame() {
   let ingredientDivs = document.getElementsByClassName('ingredient');
+
   // Remove all order tickets left over from previous game
   for (i = 0; i < orderTicketsDiv.children.length; i++) {
     orderTicketsDiv.children[i].remove();
   }
   // Remove score left over from previous game
-  for (i = 0; i < score.children.length; i++) {
-    score.children[i].remove();
+  if (score.children[0]) {
+    score.children[0].remove();
   }
 
   // Remove ingredients left over from previous game
@@ -372,75 +392,37 @@ function startGame() {
     }
   }
 
-  // Remove score from popup modal
-  if (modalContentP.children.length == 2) {
-    modalContentP.children[0].remove();
+  // Remove score from start popup modal
+  if (startPopupContentParagraph.children.length > 1) {
+    startPopupContentParagraph.children[0].remove();
   }
+}
+
+function startGame() {
+
+  resetGame();
+
+  let activeOrderTicket;
+  let ingredientDivs = document.getElementsByClassName('ingredient');
+  let startingScore = document.createElement('div');
+
   startingScore.textContent = 0;
   score.appendChild(startingScore);
 
-  runClock();
-  randomizeIngredientImages();
-  // make new ticket
-  newTicket();
-  newTicket();
-  newTicket();
-  newTicket();
-  let orderTickets = document.querySelectorAll('.order-ticket');
-  orderTickets.forEach((ticket, i) => {
-    ticket.style.left = i * 210 + 'px';
-  });
-  // make the ticket active
+  runClock(30);
+  randomlyPlaceIngredientImages();
+
+  // Make three new order tickets
+  createRandomOrderTicket();
+  createRandomOrderTicket();
+  createRandomOrderTicket();
+
+  distributeTicketSpacing();
+
+  // Make the first ticket active
   orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
   activeOrderTicket = document.getElementById('active-ticket');
-  activeOrderTicket.setAttribute('complete', 'false');
 }
 
-
-// function to check when all items on recipe list are checked off,
-function isItemCrossedOut(listItem) {
-  return listItem.style.textDecoration === 'line-through wavy black';
-}
-
-
-function isListComplete() {
-  let activeOrderTicket = document.getElementById('active-ticket');
-  let activeListItems = Array.from(activeOrderTicket.children[0].children);
-
-  if (activeListItems.every(isItemCrossedOut)) {
-    activeOrderTicket.setAttribute('complete', 'true');
-    return true;
-  }
-}
-
-function scorePoint() {
-  let score = document.getElementById('score');
-  score.children[0].textContent++;
-}
-
-function switchout() {
-  if (isListComplete()) {
-    setTimeout(() => {
-      let orderTickets = document.querySelectorAll('.order-ticket');
-
-      // generate new recipe at end of array
-      createRandomOrderTicket();
-
-      orderTickets.forEach((ticket, i) => {
-        ticket.style.left = i * 210 + 'px';
-      });
-      // shift recipe from order tickets
-      orderTicketsDiv.children[0].remove();
-      // make next recipe in array the order-ticket active-ticket class
-      orderTicketsDiv.children[0].setAttribute('id', 'active-ticket');
-      orderTicketsDiv.children[0].setAttribute('complete', 'false');
-
-      // Move position of all tickets
-      orderTickets = document.querySelectorAll('.order-ticket');
-      orderTickets.forEach((ticket1,i1) => {
-        ticket1.style.left = i1 * 210 + 'px';
-      });
-      scorePoint();
-    }, 10);
-  }
-}
+// Start start popup on page load
+showStartPopup();
